@@ -6,7 +6,7 @@ namespace AuctionService;
 
 public class MappingProfiles : Profile
 {
-    protected MappingProfiles()
+    public MappingProfiles()
     {
         CreateMap<Auction, AuctionDto>().IncludeMembers(x => x.Item);
         CreateMap<Item, AuctionDto>();
