@@ -23,7 +23,7 @@ public static class Config
             new Client
             {
                 ClientId = "postman",
-                ClientName = "postman",
+                ClientName = "Postman",
                 AllowedScopes = {"openid", "profile", "auctionApp"},
                 RedirectUris = {"https://www.getpostman.com/oauth2/callback"},
                 ClientSecrets = new[] {new Secret("NotASecret".Sha256())},
