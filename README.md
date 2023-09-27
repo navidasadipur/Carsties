@@ -18,6 +18,7 @@ in backend using:
 <li>RabbitMQ for Service bus</li>
 <li>install and use IdentityServer in the Microservices app</li>
 <li>publish the Microservices app to Docker compose</li>
+<li>Gateway Service and Reverse Proxy using Yarp</li>
 </ul>
 
 in frontend using:
