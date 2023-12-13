@@ -1,6 +1,6 @@
 import React from 'react'
 import Heading from '../components/Heading';
-import { getSession } from 'next-auth/react';
+import { getSession } from '../actions/authActions';
 
 export default async function Session () {
     const session = await getSession();
