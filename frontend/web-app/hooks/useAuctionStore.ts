@@ -1,5 +1,5 @@
 import { Auction, PagedResult } from "@/types"
-import { create } from "domain"
+import { create } from "zustand"
 
 type State = {
     auctions: Auction[]
@@ -18,10 +18,21 @@ const initialState: State = {
     totalCount: 0,
 }
 
-// export const useAuctionStore = create<State & Actions>((set) => ({
-//     ...initialState,
+export const useAuctionStore = create<State & Actions>((set) => ({
+    ...initialState,
 
-//     setData: () => {},
+    setData: (data: PagedResult<Auction>) => {
+        set(() => ({
+            auctions: data.results,
+            totalCount: data.totalCount,
+            pageCount: data.pageCount,
+        }))
+    },
 
-//     setCurrentPrice: () => {},
-// }))
+    setCurrentPrice: (auctionId: string, amount: number) => {
+        set((state) => ({
+            auctions: state.auctions.map((auction) => auction.id === auctionId 
+                ? {...auction, currentHighBid: amount} : auction)
+        }))
+    },
+}))
