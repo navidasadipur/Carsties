@@ -30,6 +30,9 @@ export const useAuctionStore = create<State & Actions>((set) => ({
     },
 
     setCurrentPrice: (auctionId: string, amount: number) => {
+        console.log(auctionId);
+        console.log(amount);
+
         set((state) => ({
             auctions: state.auctions.map((auction) => auction.id === auctionId 
                 ? {...auction, currentHighBid: amount} : auction)

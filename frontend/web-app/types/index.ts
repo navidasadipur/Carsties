@@ -25,10 +25,18 @@ export type Auction = {
 
   export type Bid = {
     id: string
-    aucitonId: string
+    auctionId: string
     bidder: string
     bidTime: string
     amount: number
     bidStatus: string
+  }
+
+  export type AuctionFinished = {
+    itemSold: boolean
+    auctionId: string
+    winner?: string
+    seller: string
+    amount?: number
   }
   
